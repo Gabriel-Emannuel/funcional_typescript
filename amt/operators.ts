@@ -81,6 +81,12 @@ class Gato extends Felino {
   }
 }
 
+class Jaguatirica extends Felino {
+  correr() {
+    console.log("Correndo!");
+  }
+}
+
 const gatinho = new Gato("Garfield");
 
 if (gatinho instanceof Gato) {
