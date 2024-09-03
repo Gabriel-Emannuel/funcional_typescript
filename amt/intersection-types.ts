@@ -12,6 +12,7 @@ interface Endereco {
 };
 
 interface Contato {
+  rua: string; // string vs number
   email: string;
   telefone?: number;
   logContato: () => void
@@ -29,4 +30,4 @@ const pessoa: PessoaComContato = {
   logContato: () => console.log("Email da pessoa: ", pessoa.email)
 };
 
-pessoa.logContato()
+pessoa.logEndereco()
