@@ -2,8 +2,6 @@
 // * Union type (Tipo1 | Tipo2)
 // * Operadores typeof, as, in, instanceof
 
-// dar exemplo de uso real para cada operador
-
 // Interseção de tipos
 
 interface Endereco {
