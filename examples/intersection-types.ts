@@ -1,6 +1,4 @@
-// * Interseção de tipos (Tipo1 & Tipo2)
-// * Union type (Tipo1 | Tipo2)
-// * Operadores typeof, as, in, instanceof
+// Interseção de tipos (Tipo1 & Tipo2)
 
 // Interseção de tipos
 
@@ -18,8 +16,10 @@ interface Contato {
   logContato: () => void
 };
 
+// Intersecão de tipos pode unir os tipos
 type PessoaComContato = Endereco & Contato;
 
+// Pessoa vai ter as propriedades de Endereco e Contato
 const pessoa: PessoaComContato = {
   rua: "Rua A",
   cidade: "São Paulo",

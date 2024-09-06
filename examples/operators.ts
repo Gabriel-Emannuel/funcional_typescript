@@ -1,5 +1,7 @@
-// --- typeof ------------------------------------------------------------------
+// Operadores typeof, as, in, instanceof
 
+// --- typeof ------------------------------------------------------------------
+// Podemos usar typeof para saber o tipo de um dado
 console.log(typeof "sou uma string" === "string")
 console.log(typeof 123 === "number")
 console.log(typeof 123n === "bigint")
@@ -12,26 +14,23 @@ console.log(Array.isArray([1, 2, 3]))
 
 
 
-
 // --- as ----------------------------------------------------------------------
 
-let a = [1, 2, 3] as const;
-// a.push(102); // error
-// a[0] = 101; // error
-
-// ------------------------
-
+// Podemos usar o operador "as" para converter um tipo em outro
 let valor: unknown = "Hello, TypeScript";
 let tamanho: number = (valor as string).length;
 console.log(tamanho);
 
-
+// Inclusive definir uma variável como constante
+let a = [1, 2, 3] as const;
+// a.push(102); // error
+// a[0] = 101; // error
 
 
 
 // --- in ----------------------------------------------------------------------
 
-// Exemplo 1: Verificação de Propriedade em Objetos
+// Podemos usar o operador "in" para verificação de propriedade em objetos
 const homem = { nome: "João", idade: 25 };
 
 if ("nome" in homem) {
@@ -60,13 +59,16 @@ function descreverVeiculo(transporte: Carro | Bicicleta): string {
   }
 }
 
+// Como a função `descreverVeiculo` recebe um objeto do tipo `Carro` ou `Bicicleta`.
+// Podemos passar tanto um objeto do tipo Carro, quanto do tipo Bicicleta para a função.
+// A função utiliza `in` para verificar qual o tipo do objeto.
 console.log(descreverVeiculo({ modelo: "Fusca", ano: 1976 }));
 console.log(descreverVeiculo({ marca: "Caloi", marcha: 21 }));
 
 
 
-
 // --- instanceof --------------------------------------------------------------
+// Podemos usar o instanceof para verificar se um objeto pertence a uma classe
 
 class Felino {
   nome: string;
@@ -89,10 +91,12 @@ class Jaguatirica extends Felino {
 
 const gatinho = new Gato("Garfield");
 
+// O instanceof pode ser usado para verificar se um objeto pertence a uma classe filha
 if (gatinho instanceof Gato) {
   gatinho.miar();
 }
 
+// O instanceof pode ser usado para verificar se um objeto pertence a uma classe pai
 if (gatinho instanceof Felino) {
   console.log(`${gatinho.nome} é um felino.`);
 }
